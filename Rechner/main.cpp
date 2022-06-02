@@ -49,6 +49,6 @@ int main(int argc, const char * argv[])
         
     }while(exit == 1);
     
-    //std::cout << "Thank you for using the calculator." << std::endl;
+    std::cout << "Thank you for using the calculator." << std::endl;
     
 }
