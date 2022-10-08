@@ -1,18 +1,9 @@
-//
-//  GetInput.h
-//  Rechner
-//
-//  Created by Paul Wunder on 28.11.20.
-//  Copyright © 2020 Paul Wunder. All rights reserved.
-//
-
 #ifndef GetInput_h
 #define GetInput_h
 
-
 #endif /* GetInput_h */
 
-struct userInputs   //Container for all inputs an user can type in
+struct userInputs
 {
     char calcType;
     float ina;
@@ -23,11 +14,12 @@ struct userInputs   //Container for all inputs an user can type in
 
 userInputs GetInput()
 {
-    userInputs input;                       //create instance of userInputs-struct
+    userInputs input;
     bool inputcheck_calc = false;           //bool to check if calctype-input is valid
     bool inputcheck_a = true;               //bools to check if variable-inputs are valid
     bool inputcheck_b = true;
     
+	
     //Input of Calculation-Type
     //----------------------------------------
     //----------------------------------------
@@ -57,13 +49,6 @@ userInputs GetInput()
                 
         }
         
-        //if(input.calcType != '+' && input.calcType != '-' && input.calcType != '*' && input.calcType != '/' && input.calcType != 's' && input.calcType != 'p' && input.calcType != 'r')
-        //{
-        //   std::cout << "That's not a valid input for the calculation type! Please enter one of the defined options." << std::endl;
-        //    std::cin.clear();                 //deletes all previous set error-bits of cin.fail()
-        //    inputcheck_calc = true;             //if input is NOT valid, set check-var to true. thus the while-expression is true and we get another loop.
-       // }
-        
         std::cin.ignore(INT_MAX, '\n');         //safety-clear of all previous entered userinput. if the pre-entered value was invalid, a newly entered value will not be disturbed by the nonvalid pre-input. clear input buffer until INT_MAX (very big number) has been discarded, or a new line has been encountered
     }while(inputcheck_calc);
 
@@ -92,11 +77,6 @@ userInputs GetInput()
             }
             std::cin.ignore(INT_MAX, '\n');
         }while(inputcheck_a);
-        
-        //if(input.ina < 0 && input.calcType == 's')      //check for negative userinput in case the operation is sqrt.
-       // {
-        //    input.sqrtNegative = true;                  //set check-var to true if input is negative
-       // }
         
     //----------------------------------------
     }else if (input.calcType == '+' || input.calcType == '-' || input.calcType == '*' || input.calcType == '/') //two variables needed for +-*/
@@ -134,15 +114,10 @@ userInputs GetInput()
             std::cin.ignore(INT_MAX, '\n');
         }while(inputcheck_b);
         
-       // if(input.inb == 0)                          //check for userinput b = 0 if operation is division
-       // {
-        //    input.divideZero = true;                //set check-var to true if input b is 0
-       // }
     }
     //----------------------------------------
     //----------------------------------------
     
-    
-    return input;   //return the struct-instance "input" to main.c
+    return input;
     
 }

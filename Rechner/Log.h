@@ -1,17 +1,8 @@
-//
-//  Log.h
-//  Rechner
-//
-//  Created by Paul Wunder on 22.11.20.
-//  Copyright © 2020 Paul Wunder. All rights reserved.
-//
-
 #ifndef Log_h
 #define Log_h
 
-
 #endif /* Log_h */
-//h-file for Logging 
+
 void Log(float ina, float inb, float result, char calcType, bool divideZero, bool sqrtNegative)
 {
     
@@ -48,6 +39,5 @@ void Log(float ina, float inb, float result, char calcType, bool divideZero, boo
         std::cout << "Round " << ina << " to the next integer = " << result << std::endl;
         
     }
-    
     
 }
